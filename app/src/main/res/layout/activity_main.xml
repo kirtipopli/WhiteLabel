@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    tools:context=".MapsActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_searchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/viewSpacing_50dp"
+        android:layout_margin="@dimen/viewSpacing_16dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:visibility="gone"
+            android:id="@+id/btnRestaurant"
+            android:layout_width="@dimen/viewSpacing_60dp"
+            android:layout_height="@dimen/viewSpacing_36dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/viewSpacing_4dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/ic_search_round_gray" />
+
+        <fragment android:id="@+id/autocomplete_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+            />
+
+        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            android:id="@+id/edt_mapSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/viewSpacing_10dp"
+            android:ellipsize="end"
+            android:visibility="gone"
+            android:hint="Search Places"
+            android:maxLines="1"
+            android:paddingTop="@dimen/viewSpacing_4dp"
+            android:paddingBottom="@dimen/viewSpacing_4dp"
+            android:textColor="@color/colorBlack"
+            android:textColorHint="@color/colorBlackMedium"
+            android:textSize="16sp"
+            tools:text="Search Places" />
+
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/rg_toggleMapList"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/viewSpacing_40dp"
+        android:layout_below="@id/rl_searchLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/viewSpacing_16dp"
+        android:layout_marginTop="@dimen/viewSpacing_16dp"
+        android:layout_marginEnd="@dimen/viewSpacing_16dp"
+        android:layout_marginBottom="@dimen/viewSpacing_10dp"
+        android:checkedButton="@+id/rb_ContactsDiscussion"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/rb_MapView"
+            android:layout_width="@dimen/viewSpacing_0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/viewSpacing_1dp"
+            android:layout_marginTop="@dimen/viewSpacing_1dp"
+            android:layout_marginBottom="@dimen/viewSpacing_1dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_radio_flat_selector"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="List View"
+            android:textColor="@drawable/bg_radio_flat_text_selector" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/rb_ListView"
+            android:layout_width="@dimen/viewSpacing_0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/viewSpacing_1dp"
+            android:layout_marginEnd="@dimen/viewSpacing_1dp"
+            android:layout_marginBottom="@dimen/viewSpacing_1dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_radio_flat_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="Map View"
+            android:textColor="@drawable/bg_radio_flat_text_selector" />
+    </RadioGroup>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_placesList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rg_toggleMapList"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        android:scrollbars="none"
+        android:visibility="visible"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/custom_info_contents" />
+
+    <fragment
+        android:id="@+id/mapView"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rg_toggleMapList"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp"
+        android:layout_above="@id/ad_View"/>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/ad_View"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/admob_id">
+    </com.google.android.gms.ads.AdView>
+
+</RelativeLayout>

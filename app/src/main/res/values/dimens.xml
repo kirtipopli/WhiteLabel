@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="viewSpacing_50dp">50dp</dimen>
+    <dimen name="viewSpacing_16dp">16dp</dimen>
+    <dimen name="viewSpacing_60dp">60dp</dimen>
+    <dimen name="viewSpacing_36dp">36dp</dimen>
+    <dimen name="viewSpacing_4dp">4dp</dimen>
+    <dimen name="viewSpacing_1dp">1dp</dimen>
+    <dimen name="viewSpacing_10dp">10dp</dimen>
+    <dimen name="viewSpacing_0dp">0dp</dimen>
+    <dimen name="viewSpacing_40dp">40dp</dimen>
+</resources>

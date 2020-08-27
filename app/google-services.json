@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "699060553821",
+    "firebase_url": "https://whitelabelapp-c93da.firebaseio.com",
+    "project_id": "whitelabelapp-c93da",
+    "storage_bucket": "whitelabelapp-c93da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:699060553821:android:4044c888cf34f714ed65b4",
+        "android_client_info": {
+          "package_name": "com.app.whitelabel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "699060553821-1smv9v9o9l36eff0s5me3djik02smob7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyB7asyhW7JK6hyK90S_Ow_ai145KH14Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "699060553821-4mjgp54rqm1b9cm4m9bvlnil6idgcp5f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "699060553821-8gcrb4mrrdqkfj91e32b4poepi4foq6g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.appineers.whitelabel"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
